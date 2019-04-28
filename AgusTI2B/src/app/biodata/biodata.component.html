@@ -1,0 +1,45 @@
+<div class="body">
+<h1 align="center">
+ {{getTitle()}}
+</h1>
+<h2 align="center">{{bdate | date:format}}</h2>
+<p>{{"Nama : "+nama}}</p>
+<p>{{"Alamat : "+alamat}}</p>
+<p>Hobby saya</p>
+<table border =1>
+  <thead>
+    <th>NO</th>
+    <th>Hobby</th>
+    <th>Keterangan</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let biodata of Biodata">
+    <td>{{biodata.id}}</td>
+    <td>{{biodata.hobi}}</td>
+    <td>{{biodata.ket}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<!--<h2>
+  {{getTitle()}}
+</h2>
+<ul>
+  <li *ngFor="let biodata of Biodata">
+    {{biodata}}
+  </li>
+</ul> -->
+<!-- <table>
+  <thead>
+    <th>
+      #ID
+    </th>
+    <th>Biodata</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let biodata of Biodata">
+      
+    <td>{{biodata.name}}</td>
+    </tr>
+  </tbody>
+</table> -->
