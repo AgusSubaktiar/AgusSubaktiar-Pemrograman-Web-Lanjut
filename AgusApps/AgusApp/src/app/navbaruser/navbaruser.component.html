@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand" routerLink="/">Welcome My Friend App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navabarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li routerLinkActive="active current">
+        <a class="nav-link" routerLink="/home">Home<span class="sr-only"></span></a>
+      </li>
+      <li routerLinkActive="active current">
+        <a class="nav-link" routerLink="/friend">Friend<span class="sr-only"></span></a>
+      </li>
+      <li routerLinkActive="active current">
+        <a class="nav-link" routerLink="/contactMe">Contact Me<span class="sr-only"></span></a>
+      </li>
+    <li routerLinkActive="active current" [routerLinkActive]>
+    <a routerLink="/" (click) = "a()" class="nav-link">[Logout]</a>
+     </li>
+   </ul>
+ </div>
+</nav> 
+

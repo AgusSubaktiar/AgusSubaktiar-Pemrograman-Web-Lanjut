@@ -1,0 +1,213 @@
+<!-- <div class="container">
+  <div class="col-md-12">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+      <div class="form-group">
+       <br>
+        <h3 align="center">Add a New Friends</h3>
+        <div class="form-group row"> -->
+        <!-- Default input Nama -->
+        <!-- <label for="inputText3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input mdbInput type="text" class="form-control" id="inputName3" required name ngModel #firstName="ngModel" (change)="log(firstName)"
+          name="nama" placeholder="Name"
+          />
+          <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+            <div *ngIf="firstName.errors['required']">Nama Tidak Valid</div>
+          </div>
+        </div>
+       </div>
+  </div>      
+    <div class="form-group row"> -->
+        <!-- Default input Email-->
+        <!-- <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input mdbInput type="text" class="form-control" id="email" required email ngModel #firstEmail="ngModel" (change)="log(firstEmail)"
+          name="email" placeholder="Email"
+          />
+          <div class="alert alert-danger" 
+          *ngIf="firstEmail.touched && !firstEmail.valid">
+          <div *ngIf="firstEmail.errors['required']">Email Tidak Valid</div>
+          <div *ngIf="firstEmail.errors['email']">
+              Email tidak Valid
+            </div>
+          </div>
+        </div>
+      </div> -->
+    
+      <!-- Default Input No.Telp -->
+     
+      <!-- <div class="form-group row">
+          <label for="pattern" class="col-sm-2 col-form-label">Contact No.</label>
+          <div class="col-sm-10">
+            <input mdbInput type="text" class="form-control" id="pattern" required pattern='[0-9]+' minlength="12" maxlength="13"ngModel #firstNomor="ngModel" (change)="log(firstNomor)"
+            name="contact" placeholder="No.Telp"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="firstNomor.touched && !firstNomor.valid">
+            <div *ngIf="firstNomor.errors['required']">Harap Isi Dengan Angka</div>
+            <div *ngIf="firstNomor.errors['minlength']">Harap Isi Min-12 Angka</div>  
+            <div *ngIf="firstNomor.errors['pattern']">
+                Harus berupa Angka
+              </div>
+            </div>
+          </div>
+        </div>        -->
+        <!-- Default input -->
+      <!-- <button  type="submit" class="btn btn-success">Add Friend</button>
+    </form>
+    
+      <br>
+      <h3 align="center">My Friends</h3> -->
+      <!-- Search form -->   
+      <!-- <div align="center">  
+      <form>
+          <<div class="form-group row">
+          <label align="center" for="inputText3" class="col-sm-2 col-form-label">Search</label>
+          <input class="search" type="text" placeholder="Cari..." required>		
+        </div> 
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contact</th>
+            </tr>
+            <tr *ngFor="let list of coursesForOne">
+              <th> {{list.id}} </th>
+              <th> {{list.name}} </th>
+              <th> {{list.email}} </th>
+              <th> {{list.contact}} </th>
+            </tr>
+          </thead> -->
+
+          <!-- <div class="container" align="center">
+            <div class="col-md-10 offset-md-1" >
+              Search: <input type="text" placeholder="search" [(ngModel)]="searchText.name" style="width:25%">
+              <br>
+              <hr>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Contact</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of data | filterby: searchText">
+                    <th scope="row">{{item.id}}</th>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.contact}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div> --> -->
+
+          <br>
+<hr>
+<h3 style=text-align:center>Add a New Friends</h3>
+
+<div class="container">
+  <div class="col-md-10 offset-md-1">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)">
+      <div class="form-group row">
+        <label for="nama"class="col-sm-3 col-form-label">Name</label>
+        <div class="col-sm-9">
+          <input
+          type="text"
+          id="nama"
+          class="form-control"
+          required
+          maxlength="20"
+          minlength="3"
+          ngModel
+          #namaTeman="ngModel"
+          name="nama"
+          />
+          <div class="alert alert-danger" *ngIf="namaTeman.touched && !namaTeman.valid">
+          <div *ngIf="namaTeman.errors['required']">Nama Harus Diisi</div>
+          <div *ngIf="namaTeman.errors['minlength']">Nama Min 3 Kata</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group row">
+        <label for="email"class="col-sm-3 col-form-label">Email:</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            required
+            email
+            ngModel
+            #emailTeman="ngModel"
+            name="email"
+          />
+          <div class="alert alert-danger" *ngIf="emailTeman.touched && !emailTeman.valid">
+            <div *ngIf="emailTeman.errors['required']">Email Harus Diisi</div>
+            <div *ngIf="emailTeman.errors['email']">Harus Mengandung unsur email</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="contact"class="col-sm-3 col-form-label">Contact No:</label>
+        <div class="col-sm-9">
+          <input
+            type="text"
+            id="contact"
+            class="form-control"
+            required
+            minlength="11"
+            maxlength="13"
+            pattern='[0-9]+'
+            ngModel
+            #contactTeman="ngModel"
+            name="contact"
+            />
+          <div class="alert alert-danger" *ngIf="contactTeman.touched && !contactTeman.valid">
+            <div *ngIf="contactTeman.errors['required']">Nomor Harus Diisi</div>
+            <div *ngIf="contactTeman.errors['minlength']">Nomor Lebih dari 10 Angka</div>
+            <div *ngIf="contactTeman.errors['pattern']">Harus Berupa Angka</div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="!form.valid" class="btn btn-success">Add Friends</button>
+    </form>
+  </div>
+</div>
+
+<br>
+<h3 style=text-align:center>My Friends</h3>
+
+<div class="container" align="center">
+  <div class="col-md-10 offset-md-1" >
+    Search: <input type="text" placeholder="search" [(ngModel)]="searchText.name" style="width:25%">
+    <br>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Contact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data | filterBy: searchText">
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.contact}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

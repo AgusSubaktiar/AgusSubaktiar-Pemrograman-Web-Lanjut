@@ -1,0 +1,79 @@
+<h1 align="center">Contact Me</h1>
+<hr>
+
+<div class="container">
+  <div class="col-md-8 offset-md-2">
+    <br>
+    <form (ngSubmit)="submit()">
+      <div>
+        <div class="form-group">
+        <label for="nama">Your Name:</label>
+        <input
+          (click)= "onNew()"
+          type="text"
+          id="nama"
+          class="form-control"
+          required
+          minlength="3"
+          ngModel
+          autofocus
+          [(ngModel)]="inputModel.name"
+          #firstName="ngModel"
+          (change)="log(firstName)"
+          name="nama"
+        />
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+          <div *ngIf="firstName.errors['required']">Nama harus diisi</div>
+          <div *ngIf="firstName.errors['minlength']">Nama min 3 kata</div>
+        </div>
+      </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input
+        class="form-control"
+        rows="5"
+        id="email"
+        required
+        email
+        ngModel
+        [(ngModel)]="inputModel.email"
+        #emailTeman="ngModel"
+        name="email"
+        />
+        <div class="alert alert-danger" *ngIf="emailTeman.touched && !emailTeman.valid">
+          <div *ngIf="emailTeman.errors['required']">Email Harus Diisi</div>
+          <div *ngIf="emailTeman.errors['email']">Harus Mengandung unsur email</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="contactMethod">Your Message:</label>
+        <textarea
+        class="form-control"
+        rows="5"
+        id="comment"
+        required
+        ngModel
+        [(ngModel)]="inputModel.comment"
+        #comment="ngModel"
+        name="comment"
+        ></textarea>
+      </div>
+      <button type="submit" [disabled]="!form.valid" class="btn btn-success">
+        Submit
+      </button>
+    </form>
+    <hr>
+    
+    <div *ngIf="yourData">
+      <h2><b>Your Data</b></h2>
+      <tr *ngFor="let item of inputData">
+        <p>Username: {{item.name}}</p>
+        <p>Email: {{item.email}}</p>
+        <p>Message: {{item.comment}}</p>
+      </tr>
+    </div>
+  </div>
+</div>
